@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-primary">
+    <div class="panel-heading">Create User</div>
+        <div class="panel-body">
+            {{ form_start(form) }}
+                {{ form_errors(form.cc) }}
+                {{ form_label(form.name) }}
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.last_name) }}
+                    {{ form_widget(form.last_name, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.cc) }}
+                    {{ form_widget(form.cc, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.phone) }}
+                    {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.salary) }}
+                    {{ form_widget(form.salary, {'attr': {'class': 'form-control'}}) }}
+                <br>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            {{ form_end(form) }}
+            <br>
+            <a  class="btn btn-default" href="{{ path('user_index') }}">
+                <i class="fa fa-angle-left"></i> Back to the list users
+            </a>
+        </div>
+</div>
+{% endblock %}

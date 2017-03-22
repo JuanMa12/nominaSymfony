@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Users list</div>
+        <div class="panel-body">
+            <a class="btn btn-primary pull-right" href="{{ path('user_new') }}">
+                <i class="fa fa-plus"></i> Create a new user
+            </a>
+
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Last_name</th>
+                        <th>cc</th>
+                        <th>phone</th>
+                        <th>Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.lastname }}</td>
+                        <td>{{ user.cc }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>$ {{ user.salary }}</td>
+                        <td>
+                           <a class="btn btn-default" href="{{ path('user_show', { 'id': user.id }) }}">
+                               <i class="fa fa-eye"></i> Show
+                           </a>
+                           <a class="btn btn-warning" href="{{ path('user_edit', { 'id': user.id }) }}">
+                               <i class="fa fa-edit"></i> Edit
+                           </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</div>
+
+{% endblock %}
