@@ -50,9 +50,9 @@ class User
     private $phone;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="salary", type="string", length=255)
+     * @ORM\Column(name="salary", type="integer")
      */
     private $salary;
 
@@ -112,9 +112,9 @@ class User
     }
 
     /**
-     * Get name
+     * Get salary
      *
-     * @return string
+     * @return int
      */
     public function getSalary()
     {
@@ -186,7 +186,7 @@ class User
     /**
      * Set salary
      *
-     * @param string $salary
+     * @param int $salary
      *
      * @return User
      */

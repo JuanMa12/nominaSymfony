@@ -12,10 +12,13 @@
                         {{ form_widget(edit_form.last_name, {'attr': {'class': 'form-control'}}) }}
                     {{ form_label(edit_form.cc) }}
                         {{ form_widget(edit_form.cc, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(edit_form.cc) }}
                     {{ form_label(edit_form.phone) }}
                         {{ form_widget(edit_form.phone, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(edit_form.phone) }}
                     {{ form_label(edit_form.salary) }}
                         {{ form_widget(edit_form.salary, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(edit_form.salary) }}
                 <br><input type="submit" value="Edit" class="btn btn-primary"/><hr>
             {{ form_end(edit_form) }}
 

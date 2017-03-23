@@ -58,10 +58,15 @@ class UserController extends Controller
     public function showAction(User $user)
     {
         $deleteForm = $this->createDeleteForm($user);
-
+        $roster =[
+            'eps' => $user->getSalary()*0.04,
+            'pension' => $user->getSalary()*0.04,
+            'salaryFinal' =>  $user->getSalary() - ($user->getSalary()*0.04 + $user->getSalary()*0.04)
+        ];
         return $this->render('user/show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
+            'roster' => $roster
         ));
     }
 
