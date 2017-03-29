@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-primary">
+    <div class="panel-heading">Books list</div>
+    <div class="panel-body">
+        <a class="btn btn-primary pull-right" href="{{ path('book_new') }}">
+            <i class="fa fa-plus"></i> Create a new book
+        </a>
+
+        <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Editorial</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td><a href="{{ path('book_show', { 'id': book.id }) }}">{{ book.id }}</a></td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.date }}</td>
+                <td>{% for editorial in editorials %}
+                        {% if book.editorial == editorial.id %}
+                            {{ editorial.name }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ book.description }}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ path('book_show', { 'id': book.id }) }}">
+                        <i class="fa fa-eye"></i> Show
+                    </a>
+                    <a class="btn btn-warning" href="{{ path('book_edit', { 'id': book.id }) }}">
+                        <i class="fa fa-edit"></i> Edit
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}

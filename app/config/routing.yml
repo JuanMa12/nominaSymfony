@@ -6,3 +6,10 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix:   /user
 
+app_book:
+    resource: "@AppBundle/Resources/config/routing/book.yml"
+    prefix:   /book
+
+app_editorial:
+    resource: "@AppBundle/Resources/config/routing/editorial.yml"
+    prefix:   /editorial

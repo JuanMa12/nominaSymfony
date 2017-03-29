@@ -1,0 +1,24 @@
+editorial_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Editorial:index" }
+    methods:  GET
+
+editorial_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Editorial:show" }
+    methods:  GET
+
+editorial_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Editorial:new" }
+    methods:  [GET, POST]
+
+editorial_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Editorial:edit" }
+    methods:  [GET, POST]
+
+editorial_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Editorial:delete" }
+    methods:  DELETE

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-primary">
+    <div class="panel-heading">Create Book</div>
+    <div class="panel-body">
+    {{ form_start(form) }}
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.name) }}
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.date) }}
+        {{ form_label(form.editorial) }}
+        {{ form_widget(form.editorial, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.editorial) }}
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.description) }}
+        <br>
+        <input type="submit" value="Create" class="btn btn-primary"/>
+    {{ form_end(form) }}
+        <br>
+        <a  class="btn btn-default" href="{{ path('book_index') }}">
+            <i class="fa fa-angle-left"></i> Back to the list books
+        </a>
+    </div>
+</div>
+{% endblock %}

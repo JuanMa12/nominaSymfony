@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-primary">
+    <div class="panel-heading">Editorials list</div>
+    <div class="panel-body">
+        <a class="btn btn-primary pull-right" href="{{ path('editorial_new') }}">
+            <i class="fa fa-plus"></i> Create a new editorial
+        </a>
+        <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for editorial in editorials %}
+            <tr>
+                <td><a href="{{ path('editorial_show', { 'id': editorial.id }) }}">{{ editorial.id }}</a></td>
+                <td>{{ editorial.name }}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ path('editorial_show', { 'id': editorial.id }) }}">
+                        <i class="fa fa-eye"></i> Show
+                    </a>
+                    <a class="btn btn-warning" href="{{ path('editorial_edit', { 'id': editorial.id }) }}">
+                        <i class="fa fa-edit"></i> Edit
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}
